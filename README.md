@@ -1,67 +1,48 @@
 # Performant Cosmos R&D Utilizing ABCI++
-<br />
 
-## 1. Reasoning
+## **1. Reasoning**
 
-<br />
+### **Status of the Cosmos Framework**
 
-### Status of Cosmos Framework
+Since the creation of the Tendermint and Cosmos SDK framework, several feature improvements have been made. The most notable enhancement is the introduction of the IBC (Inter-Blockchain Communication) protocol, enabling cross-chain interaction among Cosmos chains. These enhanced features have opened up possibilities for various application development. However, scalability and computational performance have not significantly improved since 2019.
 
-After born of Tendermint and Cosmos-SDK framework, there has been improvement in features. Most notable improvement is IBC(Inter-Blockchain Communication) protocol, allowing cross-chain interaction among Cosmos chains. However, the scalability and performance haven’t significantly improved since 2019.
+Outside the Cosmos ecosystem, continuous improvements in dPoS blockchain technology have been made to achieve better scalability and performance. Examples include Solana, Avalanche, Aptos, and more.
 
-Outside Cosmos, there has been continuous improvement of dPoS blockchain technology to achieve better scalability and performance, such as Solana, Avalanche, Aptos and more. In Cosmos, introduction of ABCI++ opened up various R&D possibilities to optimize consensus, transaction handling and state transition processes.
+Within the Cosmos ecosystem, the introduction of ABCI++ has provided various R&D opportunities to optimize consensus, transaction handling, and state transition processes. Sei-Protocol is an example of performance improvement utilizing ABCI++.
 
-<br />
+### **Cosmos as a Standard Blockchain Technology**
 
-### Cosmos as Standard Blockchain Technology
+Despite R&D efforts by various projects, the development of the entire Cosmos ecosystem, including the Cosmos Hub, has not been fully realized. Projects such as Binance Chain, Sei, dydx, Celestia, and Hyperliquid are forking or referencing Tendermint/CometBFT and Cosmos-SDK for their own use cases. However, this has not resulted in the improvement of the standard Cosmos technology. As a result, standard Cosmos technology lags behind other recent technologies, jeopardizing the position of Tendermint/CometBFT and Cosmos-SDK as a performant blockchain technology stack, especially in mass adoption scenarios.
 
-Unfortunately, those diversified R&D efforts are not benefitting whole Cosmos Ecosystem, including Cosmos Hub. Teams like Binance Chain, Sei, dydx, Celestia, Hyperliquid are forking or referencing Tendermint/CometBFT and Cosmos-SDK for their own usecases but it does not result in improvement of the standard Cosmos technology. This result in the situation where the standard Cosmos technology stays behind other recent technologies, ultimately threatening the position of Tendermint/CometBFT and Cosmos-SDK as the performant blockchain technology stack especially in mass adoption scenario.
+From the perspective of the Cosmos Hub, its main revenue model is Inter-Chain Security (ICS), which relies on a performant Cosmos tech stack to persuade consumer chains to become part of the Cosmos Hub ICS ecosystem. The success of the Hub ICS ecosystem depends on the success of ICS zones with significant user bases and activities. Therefore, a performant tech stack is crucial for growth.
 
-From Cosmos Hub perspective, its main revenue model is becoming ICS(Inter-Chain Security) which requires performant Cosmos tech stack to persuade consumer chains to be part of the Cosmos Hub ICS ecosystem. Considering successful ICS model rely on the many success of ICS zones with significant userbase and activities, the performant tech stack is one of the most important condition for the growth of Hub ICS ecosystem.
+## **2. How**
 
-<br />
+### **Bringing Recent Blockchain Technology to the Cosmos Tech Stack**
 
-## 2. How
+To thrive in the mass adoption phase of the blockchain cycle, the Cosmos tech stack needs continuous and timely efforts to keep up with recent technological developments. During this phase, there will be numerous mega-applications with millions of users that require a blockchain tech stack capable of handling such a large community. Since it takes time for R&D to yield a secure production-level codebase, steady and continuous investment in R&D is necessary. Depending solely on generous upstream pull requests from independent blockchain teams is not a sufficient strategy.
 
-<br />
+### **Separate Repository for Performance R&D**
 
-### Recent Blockchain Technology to Cosmos Tech Stack
+While we will strive to maximize compatibility with existing users, the improvements made to Tendermint/CometBFT and Cosmos-SDK may introduce some compatibility issues for existing chains. Significant changes in the structure of the tech stack may require rebase work and pose potential security risks.
 
-Therefore, we need timely and continuous efforts to keep up with recent technology development in the entire space for the Cosmos tech stack to survive in mass adoption phase of the blockchain cycle. In mass adoption phase, there will be many mega-applications with millions of userbase who will need a blockchain tech stack which can handle such large community. Because R&D takes long time to have a secure production level codebase, we need steady and continuous effort invested for such R&D. Relying on generous upstream PRs from independent blockchain teams are not a competent strategy.
+Therefore, we should not limit performance R&D to the conservative environment of the current main branch, which prioritizes security and stability. Instead, we suggest creating a separate repository to accelerate R&D capabilities without the practical barriers of existing technically conservative approaches. This will maximize the freedom to explore various design options.
 
-<br />
+### **Expected Roadmap**
 
-### Separate Repository for Performance R&D
+The initial proposal includes research work to explore various design options and compare them. This is necessary because many aspects of performance improvement directions are not obvious and require different methodologies. The goal is to identify the top design options that have the most significant performance impact, the least compatibility issues, security assumptions, and less complexity to implement.
 
-Even though we will do our best to have maximized compatibility with existing users, these improvements on Tendermint/CometBFT and Cosmos-SDK might cause some compatibility issue on existing chains to adopt with, because of significant rebase work caused from breaking changes in the structure of the tech stack, followed by potential security risk factors. 
-
-Hence, the performance R&D should not be limited by such conservative environment of current main branch whose main priority is security and stability. Therefore, we suggest a separate repository to accelerate R&D capability without any practical barriers from existing technically conservative approach, which allows maximized freedom to explorer various design options.
-
-<br />
-
-### Expected Roadmap
-
-The first proposal only includes the research work necessary to explore various design options to be compared. This is because many part of performance improvement directions are not obvious with different methodologies existing. We need to figure out top design options which have most significant performance impact, least compatibility issues and security assumptions, and less complexity to implement.
-
-After completion of our proposed research, a follow-up project can be proposed to implement most reasonable design options as PoC so that we can prove the practicality of performant Cosmos tech stack without hurting compatibility for IBC connections with existing Cosmos ecosystem. Production level codebase project can be followed after PoC step for practically usable tech stack implementation.
-
-<br />
+After completing the proposed research, we can propose a follow-up project to implement the most reasonable design options as a proof of concept (PoC). This will allow us to demonstrate the practicality of a performant Cosmos tech stack without compromising compatibility with IBC connections in the existing Cosmos ecosystem. Once the PoC step is complete, we can proceed with a production-level codebase project for a practical and usable tech stack implementation.
 
 ## 3. Funding
 
-<br />
-
 **1) Research : 2.5 devs * 3 months * $20k = $150k**
 
-- Research multiple improvement in Tendermint/CometBFT/Cosmos-SDK from Sei, BNB and some other chains and suggest the most useful directions for performant Cosmos tech stack implementation.
-
-<br />
+- Research multiple improvements in Tendermint/CometBFT/Cosmos-SDK from Sei, BNB and some other chains and suggest the most useful directions for performant Cosmos tech stack implementation.
 
 **2) PR on Vesting Module for Cancellation by Governance : 0.5 dev * 1 month * $20k = $10k**
 
 - Adding vesting cancellation via governance feature to existing vesting module
 - Context : This work is added to allow more flexible community fund or subDAO spending by introducing vesting cancellation by governance or multi-sig.
-
-<br />
 
 **Total : $160k**
